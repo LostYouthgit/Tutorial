@@ -40,9 +40,10 @@ public class PlayBeh : MonoBehaviour {
 	{
 		if (touch.gameObject.tag == "Respawn")
 			ReloadLvl();
+		
 	}
 
-	void OnTouch2D (Collision2D touch)
+	void OnColliderEnter2D (Collider2D touch)
 	{
 		if (touch.gameObject.tag == "Finish")
 			Exit();
@@ -50,7 +51,7 @@ public class PlayBeh : MonoBehaviour {
 
 	void Exit ()
 	{
-		Application.Quit();
+		SceneManager.LoadScene("scene2");
 	}
 
 	void ReloadLvl ()
